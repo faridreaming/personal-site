@@ -167,7 +167,7 @@ nav .text {
   row-gap: 0.5rem;
 }
 
-.list h3 {
+h3 {
   font-weight: 500;
   font-size: 1rem;
 }
@@ -176,6 +176,93 @@ nav .text {
 .list ul li > ul {
   font-style: italic;
   font-size: 0.875rem;
+  list-style: square;
+}
+
+#projects {
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 2rem;
+}
+
+.project img {
+  border: 0.125rem solid #33333380;
+  border-radius: 0.5rem;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+
+.project img:hover {
+  filter: grayscale(0);
+}
+
+.project p,
+#about p,
+.contact p {
+  font-size: 0.875rem;
+  text-align: justify;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+#about {
+  background-color: #f9e2af;
+  position: relative;
+  z-index: 9997;
+  padding-bottom: 5rem;
+}
+
+#contact {
+  position: relative;
+  z-index: 9996;
+  padding-bottom: 5rem;
+}
+
+.contacts {
+  display: grid;
+  gap: 1rem;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+}
+
+.contact .icon {
+  background-color: #333333;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact .icon img {
+  height: 1rem;
+}
+
+.contact h3 {
+  align-self: center;
+}
+
+.contact p {
+  grid-column: span 2;
+}
+
+footer {
+  background-color: #f9e2af;
+  padding: 1rem 0;
 }
 
 /* Breakpoint 1 */
@@ -206,38 +293,148 @@ nav .text {
     width: 15rem;
   }
 
-  .section-title {
-    font-size: 2rem;
+  #resume,
+  #projects,
+  #about,
+  #contact {
+    padding-bottom: 12.5rem;
   }
 
-  .list h3 {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
     font-weight: 500;
     font-size: 1.25rem;
   }
 
   .list p,
-  .list ul li > ul {
+  .list ul li > ul,
+  .project p,
+  #about p,
+  .contact p,
+  footer p {
     font-size: 1rem;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .wave-normal,
   .wave-white {
     height: 15rem;
   }
+
+  #about p {
+    width: 75%;
+    margin-inline: auto;
+  }
+
+  .contact {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto;
+  }
+
+  .contact .icon {
+    justify-self: center;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .contact .icon img {
+    height: 1.5rem;
+  }
+
+  .contact h3 {
+    grid-row: 2;
+    font-size: 1.125rem;
+    justify-self: center;
+  }
+
+  .contact p {
+    grid-column: 2;
+    grid-row: span 2;
+    align-self: center;
+    justify-self: start;
+  }
+
+  footer {
+    padding: 2rem 0;
+  }
 }
 
 /* Breakpoint 2 */
 @media (min-width: 1024px) {
+  nav a,
+  .lead {
+    font-size: 1.25rem;
+  }
+
   #hero .container {
-    gap: 20rem;
+    gap: 10rem;
   }
 
   .hero-title {
     font-size: 4rem;
   }
 
+  #resume,
+  #projects,
+  #about,
+  #contact {
+    padding-bottom: 25rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .list p,
+  .list ul li > ul,
+  .project p,
+  #about p,
+  .contact p,
+  footer p {
+    font-size: 1.125rem;
+  }
+
   .wave-normal,
   .wave-white {
     height: 25rem;
+  }
+
+  .contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 5rem;
+  }
+
+  .contact {
+    grid-template-columns: auto 1fr;
+  }
+
+  .contact h3 {
+    grid-column: 2;
+    grid-row-start: 1;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .contact p {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+  }
+
+  footer {
+    padding: 3rem 0;
   }
 }
